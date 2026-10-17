@@ -11,9 +11,9 @@ It does two things:
 
 1. Install [Userscripts](https://apps.apple.com/us/app/userscripts/id1463298887) and finish its setup.
 2. Enable it in Settings > Apps > Safari > Extensions, and choose **Allow on All Websites**.
-3. Open the raw file `dist/maps-redirect.user.js` in Safari, tap **Aa** > Userscripts, and install the detected script.
+3. Open the [install link](https://raw.githubusercontent.com/mxttbennett/maps-redirect/main/dist/maps-redirect.user.js) in Safari, tap **Aa** > Userscripts, and install the detected script.
 
-If you keep the file in your Userscripts folder instead, copy `dist/maps-redirect.user.js` there.
+The script updates itself from the same link.
 
 ## Supported links
 

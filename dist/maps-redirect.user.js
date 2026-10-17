@@ -3,6 +3,8 @@
 // @namespace    https://github.com/mxttbennett/maps-redirect
 // @version      1.0.0
 // @description  Opens Google Maps links in Apple Maps
+// @downloadURL  https://raw.githubusercontent.com/mxttbennett/maps-redirect/main/dist/maps-redirect.user.js
+// @updateURL    https://raw.githubusercontent.com/mxttbennett/maps-redirect/main/dist/maps-redirect.user.js
 // @match        *://*/*
 // @noframes
 // @run-at       document-start
