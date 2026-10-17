@@ -1,0 +1,65 @@
+name: MapsRedirect
+options:
+  bundleIdPrefix: com.mxttbennett
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    GENERATE_INFOPLIST_FILE: YES
+targets:
+  MapsRedirect:
+    type: application
+    platform: iOS
+    sources:
+      - App
+      - Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mxttbennett.MapsRedirect
+        CODE_SIGN_ENTITLEMENTS: App/MapsRedirect.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_CFBundleDisplayName: Maps Redirect
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+    dependencies:
+      - target: MapsRedirectExtension
+  MapsRedirectExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Extension/SafariWebExtensionHandler.swift
+      - Shared
+      - path: WebExtension/manifest.json
+        buildPhase: resources
+      - path: WebExtension/background.js
+        buildPhase: resources
+      - path: WebExtension/content.js
+        buildPhase: resources
+      - path: WebExtension/rules.json
+        buildPhase: resources
+      - path: WebExtension/images
+        buildPhase: resources
+        type: folder
+      - path: src/mapper.js
+        buildPhase: resources
+      - path: src/page.js
+        buildPhase: resources
+    info:
+      path: Extension/Info.plist
+      properties:
+        CFBundleDisplayName: Maps Redirect
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.Safari.web-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).SafariWebExtensionHandler
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mxttbennett.MapsRedirect.Extension
+        CODE_SIGN_ENTITLEMENTS: Extension/MapsRedirectExtension.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Extension/Info.plist
+        SKIP_INSTALL: YES

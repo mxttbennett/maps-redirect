@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Maps Redirect",
+  "description": "Opens Google Maps links in Apple Maps.",
+  "version": "1.0.0",
+  "icons": { "48": "images/icon-48.png", "96": "images/icon-96.png", "128": "images/icon-128.png" },
+  "background": { "scripts": ["background.js"], "persistent": false },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["mapper.js", "page.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "redirects", "enabled": true, "path": "rules.json" }]
+  },
+  "permissions": ["declarativeNetRequest", "nativeMessaging"],
+  "host_permissions": ["<all_urls>"]
+}

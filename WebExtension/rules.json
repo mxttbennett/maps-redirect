@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?saddr=\\1&daddr=\\2&dirflg=w"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir/([^/?#@]+)/([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e2[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?daddr=\\1&dirflg=w"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir//([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e2[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?saddr=\\1&daddr=\\2&dirflg=r"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir/([^/?#@]+)/([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e3[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?daddr=\\1&dirflg=r"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir//([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e3[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?saddr=\\1&daddr=\\2&dirflg=d"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir/([^/?#@]+)/([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e0[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 3,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?daddr=\\1&dirflg=d"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir//([^/?#@]+)(?:/@[^/?#]*)?/data=[^?#]*!3e0[^?#]*(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 2,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?saddr=\\1&daddr=\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir/([^/?#@]+)/([^/?#@]+)(?:/@[^/?#]*)?(?:/data=[^?#]*)?/?(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 2,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?daddr=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps/dir//([^/?#@]+)(?:/@[^/?#]*)?(?:/data=[^?#]*)?/?(?:[?#].*)?$",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 4,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1&ll=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps(?:/search)?/?\\?(?:[^#]*&)?(?:q|query)=loc(?::|%3A)(-?[0-9.]+(?:,|%2C)-?[0-9.]+)(?:[&#]|$)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "priority": 4,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1&ll=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps(?:/search)?/?\\?(?:[^#]*&)?(?:q|query)=(-?[0-9.]+(?:,|%2C)-?[0-9.]+)(?:[&#]|$)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:www\\.)?google\\.com/maps(?:/search)?/?\\?(?:[^#]*&)?(?:q|query)=([^&#]+)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "priority": 4,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1&ll=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://maps\\.google\\.com/(?:maps/?)?\\?(?:[^#]*&)?(?:q|query)=loc(?::|%3A)(-?[0-9.]+(?:,|%2C)-?[0-9.]+)(?:[&#]|$)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "priority": 4,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1&ll=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://maps\\.google\\.com/(?:maps/?)?\\?(?:[^#]*&)?(?:q|query)=(-?[0-9.]+(?:,|%2C)-?[0-9.]+)(?:[&#]|$)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://maps.apple.com/?q=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://maps\\.google\\.com/(?:maps/?)?\\?(?:[^#]*&)?(?:q|query)=([^&#]+)",
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  }
+]

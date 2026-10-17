@@ -23,7 +23,7 @@ const header = `// ==UserScript==
 `;
 
 const read = (file) => fs.readFileSync(path.join(root, 'src', file), 'utf8');
-const output = `${header}\n(function () {\n'use strict';\n${read('mapper.js')}\n${read('main.js')}\n})();\n`;
+const output = `${header}\n(function () {\n'use strict';\n${read('mapper.js')}\n${read('page.js')}\n${read('main.js')}\n})();\n`;
 
 fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
 fs.writeFileSync(path.join(root, 'dist', 'maps-redirect.user.js'), output);
